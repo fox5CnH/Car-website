@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    float: left;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #757575;
+    padding: 10px;
+  }
+
+  .logo img {
+    width: 80px;
+    height: auto;
+    filter: drop-shadow(3px 3px 10px #ffffff);
+  }
+
+header nav span{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+header nav span a {
+    color: rgb(0, 0, 0);
+    text-decoration:none;
+    position: relative;
+    text-align: center;
+    padding: 10px;
+}
+
+header nav span a::before{
+    content: "";
+    background-color: rgb(1, 1, 1);
+    width: 100%;
+    height: 2.4px;
+    position: absolute;
+    bottom: -2px;
+    left: 0px;
+    display: none;
+    animation: beforeAnimation .5s;
+}
+header nav span a:hover::before{
+    display: unset;
+}
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    color: black;
+    display: inline;
+    margin-right: 10px;
+    z-index: 2;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #000000;
+  }
+
+  .container {
+    max-width: auto;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  section.columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5px;
+    float: left;
+  }
+  
+  .column {
+    width: calc(20% - 20px);
+    background: linear-gradient(rgb(143, 146, 148), rgb(193, 232, 250));
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  
+  .column p {
+    margin: 0;
+  }
+  
+  .column img {
+    width: 60%;
+    height: auto;
+    float: right;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .column {
+      width: 25%;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .column {
+      width: 100%;
+      float: none;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .column {
+      width: 50%;
+    }
+  }
+
+  @media print {
+    header, footer {
+      display: none;
+    }
+    
+    body {
+      font-family: "Times New Roman", serif;
+    }
+  }
